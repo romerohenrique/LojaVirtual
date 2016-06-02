@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Cliente</title>
+</h:head>
+<h:body>
+	<h:form>
+		<div align="center">
+
+
+			<h:dataTable value="#{clienteCtrl.listagem}" var="c">
+				<f:facet name="header">
+					<h:outputLabel value="Lista de Pessoas" />
+				</f:facet>
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="Código" />
+					</f:facet>
+					<h:outputLabel value="#{c.cli_id}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputLabel value="Nome" />
+					</f:facet>
+					<h:outputLabel value="#{c.cli_nome}" />
+				</h:column>
+				<h:column>
+					<h:commandLink value="Alterar"
+						action="#{clienteCtrl.actionAlterar(c)}" />
+				</h:column>
+				<h:column>
+					<h:commandLink value="Excluir"
+						action="#{clienteCtrl.actionExcluir(c)}" />
+				</h:column>
+				
+			</h:dataTable>
+			<h:column>
+					<h:commandLink value="Inserir"
+						action="#{clienteCtrl.actionInserir}" />
+				</h:column>
+			<h:column>
+				<h:commandButton value="Página Inicial" action="/publico/index.xhtml" />
+			</h:column>
+		</div>
+	</h:form>
+</h:body>
+</html>

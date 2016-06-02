@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Loja Virtual [2.0]</title>
+	<script type="text/javascript">
+         function showHiddenValue(){ 
+            alert(document.getElementById('jsfForm:hiddenField').value);	 
+         }
+      </script>
+</h:head>
+<h:body>
+	<div align="center">
+		<h:form id="jsfForm">
+			<h:panelGrid collumns="2">
+				<h:outputLabel value="Nome" />
+				<h:inputText value="#{produtoCtrl.produto.nome}" />
+
+				<h:outputLabel value="Preço" />
+				<h:inputText value="#{produtoCtrl.produto.preco}" />
+
+			</h:panelGrid>
+			<h:inputHidden value="Cadastro salvo" id="hiddenField" />
+			<h:commandButton value="Salvar" action="#{produtoCtrl.actionGravar}"  onclick="showHiddenValue()" />
+		</h:form>
+	</div>
+</h:body>
+</html>

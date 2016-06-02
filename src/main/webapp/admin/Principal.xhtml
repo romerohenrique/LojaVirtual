@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Área - Administrativa</title>
+</h:head>
+<h:body>
+	
+	<h:form>
+	<p:breadCrumb>
+    <p:menuitem value="Categories" url="publico/index.xhtml" />
+    <p:menuitem value="Produto" url="lista_produto.xhtml" />
+    <p:menuitem value="Cliente" url="lista_cliente.xhtml" />
+    <p:menuitem value="Logout" onclick="document.loction='#{request.contextPath}/j_spring_security_logout'"/>
+		
+</p:breadCrumb>
+		
+			<p:commandLink
+				onclick="document.loction='#{request.contextPath}/j_spring_security_logout'">
+		Logout
+		</p:commandLink>
+		
+	</h:form>
+</h:body>
+</html>
